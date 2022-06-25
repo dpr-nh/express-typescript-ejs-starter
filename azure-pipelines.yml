@@ -1,0 +1,36 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: Npm@1
+  displayName: 'Install Node Packages'
+  env:
+    NODE_ENV: development
+  inputs:
+    command: 'ci'
+
+- task: Npm@1
+  displayName: 'Build app'
+  inputs:
+    command: 'custom'
+    customCommand: 'run build'
+
+- task: CopyFiles@2
+  displayName: 'Copy artifacts'
+  inputs:
+    contents: |
+      content/**/*
+      dist/**/*
+      node_modules/**/*
+      public/**/*
+      views/**/*
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Upload artifacts'
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'express-typescript-ejs-starter' 

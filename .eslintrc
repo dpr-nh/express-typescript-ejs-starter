@@ -1,0 +1,242 @@
+
+{
+    "env": {
+        "browser": true
+    },
+    "extends": [
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "airbnb-base"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "no-void": "off",
+        "indent": ["warn", 4],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "mjs": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never",
+                "vue": "never"
+            }
+        ],
+        "max-len": ["warn", {
+            "code": 150
+        }],
+        "radix": ["error", "as-needed"],
+        "lines-between-class-members": ["error", "always", {
+            "exceptAfterSingleLine": true
+        }],
+        "class-methods-use-this": "off",
+        "no-trailing-spaces": "warn",
+        "padded-blocks": "warn",
+        "no-multiple-empty-lines": "warn",
+        "@typescript-eslint/member-ordering": ["warn", {
+            "default": {
+                "order": "alphabetically",
+                "memberTypes": [
+                    // Index signature
+                    "signature",
+                  
+                    // Fields
+                    "public-static-field",
+                    "protected-static-field",
+                    "private-static-field",
+                    "public-decorated-field",
+                    "protected-decorated-field",
+                    "private-decorated-field",
+                    "public-instance-field",
+                    "protected-instance-field",
+                    "private-instance-field",
+                    "public-abstract-field",
+                    "protected-abstract-field",
+                    "private-abstract-field",
+                  
+                    // Constructors
+                    "public-constructor",
+                    "protected-constructor",
+                    "private-constructor",
+                  
+                    // Methods
+                    "public-static-method",
+                    "protected-static-method",
+                    "private-static-method",
+                    "public-decorated-method",
+                    "protected-decorated-method",
+                    "private-decorated-method",
+                    "public-instance-method",
+                    "protected-instance-method",
+                    "private-instance-method",
+                    "public-abstract-method",
+                    "protected-abstract-method",
+                    "private-abstract-method"
+                ]
+            }
+        }],
+        "semi": "off",
+        "@typescript-eslint/semi": ["warn"],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-useless-constructor": "error",
+        "@typescript-eslint/await-thenable": "error",
+        "@typescript-eslint/no-floating-promises": "error",
+        "@typescript-eslint/no-for-in-array": "error",
+        "no-implied-eval": "off",
+        "@typescript-eslint/no-implied-eval": "error",
+        "@typescript-eslint/no-misused-promises": [
+            "error",
+            {
+                "checksVoidReturn": false
+            }
+        ],
+        "@typescript-eslint/no-unnecessary-type-assertion": "error",
+        "@typescript-eslint/no-unsafe-assignment": "error",
+        "@typescript-eslint/no-unsafe-call": "error",
+        "@typescript-eslint/no-unsafe-member-access": "error",
+        "@typescript-eslint/no-unsafe-return": "error",
+        "@typescript-eslint/prefer-regexp-exec": "error",
+        "require-await": "off",
+        "@typescript-eslint/require-await": "error",
+        "@typescript-eslint/restrict-plus-operands": "error",
+        "@typescript-eslint/restrict-template-expressions": "off",
+        "@typescript-eslint/unbound-method": "off",
+        "@typescript-eslint/ban-ts-comment": "error",
+        "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+        "@typescript-eslint/explicit-function-return-type": ["error"],
+        "@typescript-eslint/explicit-member-accessibility": ["error"],
+        "@typescript-eslint/member-delimiter-style": "error",
+        "@typescript-eslint/no-confusing-non-null-assertion": "error",
+        "@typescript-eslint/no-confusing-void-expression": "error",
+        "@typescript-eslint/no-dynamic-delete": "error",
+        "@typescript-eslint/no-empty-interface": "error",
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-extra-non-null-assertion": "error",
+        "@typescript-eslint/no-misused-new": "error",
+        "@typescript-eslint/no-non-null-assertion": "error",
+        "@typescript-eslint/no-require-imports": "error",
+        "@typescript-eslint/no-this-alias": "error",
+        "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+        "@typescript-eslint/no-unnecessary-condition": "error",
+        "@typescript-eslint/no-unnecessary-type-constraint": "error",
+        "@typescript-eslint/prefer-function-type": "error",
+        "@typescript-eslint/prefer-includes": "error",
+        "@typescript-eslint/prefer-namespace-keyword": "error",
+        "@typescript-eslint/switch-exhaustiveness-check": "error",
+        "@typescript-eslint/triple-slash-reference": "error",
+        "@typescript-eslint/type-annotation-spacing": "error",
+        "prefer-destructuring": ["error", { "object": true, "array": false }],
+        "import/no-unresolved": ["error", {
+            "commonjs": true,
+            "caseSensitive": true
+        }],
+        "import/named": "error",
+        "import/default": "off",
+        "import/namespace": "off",
+        "import/export": "error",
+        "import/no-named-as-default": "error",
+        "import/no-named-as-default-member": "error",
+        "import/no-deprecated": "off",
+        "import/no-extraneous-dependencies": ["error", {
+            "devDependencies": [
+                "test/**",
+                "tests/**",
+                "spec/**",
+                "**/__tests__/**",
+                "**/__mocks__/**",
+                "test.{js,jsx}",
+                "test-*.{js,jsx}",
+                "**/*{.,_}{test,spec}.{js,jsx}",
+                "**/jest.config.js",
+                "**/jest.setup.js",
+                "**/webpack.config.js",
+                "**/webpack.config.*.js",
+                "**/rollup.config.js",
+                "**/rollup.config.*.js",
+                "**/gulpfile.js",
+                "**/gulpfile.*.js",
+                "**/Gruntfile{,.js}",
+                "**/protractor.conf.js",
+                "**/protractor.conf.*.js",
+                "**/karma.conf.js"
+            ],
+            "optionalDependencies": false
+        }],
+        "import/no-mutable-exports": "error",
+        "import/no-commonjs": "off",
+        "import/no-amd": "error",
+        "import/no-nodejs-modules": "off",
+        "import/first": "error",
+        "import/imports-first": "off",
+        "import/no-duplicates": "error",
+        "import/no-namespace": "off",
+        "import/order": ["error", {
+            "groups": [
+                ["builtin"], ["external"], ["internal"]
+            ],
+            "newlines-between": "always",
+            "alphabetize": {
+                "order": "asc",
+                "caseInsensitive": true
+            }
+        }],
+        "import/newline-after-import": "error",
+        "import/prefer-default-export": "off",
+        "import/no-restricted-paths": "off",
+        "import/max-dependencies": ["off", { "max": 10 }],
+        "import/no-absolute-path": "error",
+        "import/no-dynamic-require": "error",
+        "import/no-internal-modules": ["off", {
+            "allow": []
+        }],
+        "import/unambiguous": "off",
+        "import/no-webpack-loader-syntax": "error",
+        "import/no-unassigned-import": "off",
+        "import/no-named-default": "error",
+        "import/no-anonymous-default-export": ["off", {
+            "allowArray": false,
+            "allowArrowFunction": false,
+            "allowAnonymousClass": false,
+            "allowAnonymousFunction": false,
+            "allowLiteral": false,
+            "allowObject": false
+        }],
+        "import/exports-last": "off",
+        "import/group-exports": "off",
+        "import/no-default-export": "off",
+        "import/no-named-export": "off",
+        "import/no-self-import": "error",
+        "import/no-useless-path-segments": ["error", { "commonjs": true }],
+        "import/dynamic-import-chunkname": ["off", {
+            "importFunctions": [],
+            "webpackChunknameFormat": "[0-9a-zA-Z-_/.]+"
+        }],
+        "import/no-relative-parent-imports": "off",
+        "import/no-unused-modules": ["off", {
+            "ignoreExports": [],
+            "missingExports": true,
+            "unusedExports": true
+        }]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    }
+}
