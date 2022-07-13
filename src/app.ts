@@ -11,16 +11,6 @@ import locals from './utils/locals';
 const app = express();
 const port = process.env.SERVER_PORT;
 
-declare global {
-    namespace Express {
-        interface Request {
-            lang?: {
-                locale?: string;
-                dictionary?: never;
-            };
-        }
-    }
-}
 
 app.use(bodyParser.json());
 app.use(compression());
