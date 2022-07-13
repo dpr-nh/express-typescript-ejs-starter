@@ -35,7 +35,7 @@ const paths = {
 };
 
 function ts() {
-    var tsResult = tsProject.src()
+    const tsResult = tsProject.src()
         .pipe(tsProject());
 
     return tsResult.js.pipe(gulp.dest(paths.ts.dest));
